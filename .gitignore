@@ -1,0 +1,8 @@
+*.pyc
+config.py
+Dashboard/node_modules/
+data/archived_data/
+data/downloading_data/
+data/ignored_data/
+data/preprocessed_data/
+data/unpreprocessed_data/

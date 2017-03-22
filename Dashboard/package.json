@@ -1,0 +1,46 @@
+{
+  "name": "senti-che-news",
+  "description": "A tool for analyzing possible relationships between news and tweet sentiments",
+  "author": "Simone Santacroce, Manuel Coppotelli, George Adrian Munteanu",
+  "homepage": "https://github.com/manuelcoppotelli/SentiCheNews#readme",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "sentiment",
+    "analysis",
+    "tweets",
+    "news"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/manuelcoppotelli/SentiCheNews.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manuelcoppotelli/SentiCheNews/issues"
+  },
+  "main": "static/assets/js/main.js",
+  "scripts": {
+    "prod": "NODE_ENV=production browserify static/assets/js/main.js | uglifyjs -c -m > static/js/bundle.js",
+    "build": "browserify static/assets/js/main.js --debug -o static/js/bundle.js -v",
+    "watch": "watchify static/assets/js/main.js --debug -o static/js/bundle.js -v"
+  },
+  "devDependencies": {
+    "babelify": "^6.2.0",
+    "browserify": "^14.1.0",
+    "envify": "^4.0.0",
+    "flux": "^2.1.1",
+    "highlight.js": "^8.4.x",
+    "object-assign": "^4.0.1",
+    "react": "^0.13.3",
+    "react-highlight": "0.5.0",
+    "request": "2.64.0",
+    "uglify-js": "^2.7.5",
+    "watchify": "^3.9.0"
+  },
+  "browserify": {
+    "transform": [
+      "envify",
+      "babelify"
+    ]
+  }
+}

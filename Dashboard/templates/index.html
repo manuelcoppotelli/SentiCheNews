@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Simone Santacroce, Manuel Coppotelli, George Adrian Munteanu">
+        <meta name="author" content="Manuel Coppotelli, Simone Santacroce, George Adian Munteanu">
+
+        <title>SentiCheNews</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand">SentiCheNews</div>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" id="navigationTabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#global" aria-controls="global" role="tab" data-toggle="tab">
+                                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                                Global
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#daily" aria-controls="daily" role="tab" data-toggle="tab">
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                Daily
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div id="app"></div>
+            <hr>
+            <footer class="footer">
+                <p>Made with <span class="glyphicon glyphicon-heart" style="color: red;" aria-hidden="true"></span>by: Simone Santacroce, Manuel Coppotelli, George Adrian Munteanu</p>
+            </footer>
+        </div>
+        <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/plotly.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    </body>
+</html>
