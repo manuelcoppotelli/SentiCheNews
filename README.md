@@ -17,6 +17,8 @@ Project made with ❤ by:
 
 You can find the related presentation on [Slideshare](https://www.slideshare.net/ManuelCoppotelli/sentichenews-sentiment-analysis-on-newspapers-and-tweets).
 
+You can find the related tutorial on [YouTube](https://www.youtube.com/watch?v=W7kKXKE2EL8).
+
 ---
 
 ## Install instruction
