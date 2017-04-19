@@ -8,7 +8,6 @@ import shutil
 
 from config import *
 from Collector.Scorer import Scorer
-from Collector.Preprocessor import Preprocessor
 
 scorer = Scorer()
 
@@ -16,9 +15,8 @@ def preprocess_feed(input_file, output_file, ignored_file):
 	for line in input_file:
 		date, txt, source = line.rstrip("\n").split('\t')
 		try:
-			txt = Preprocessor.preprocess(txt)
-			positive_value, negative_value = scorer.score(txt)
-			output_file.write("{}\t{}\t{}\t{}\n".format(date, positive_value, negative_value, source))
+			value = scorer.score(txt)
+			output_file.write("{}\t{}\t{}\n".format(date, value, source))
 		except Exception as e:
 			ignored_file.write("{}\t{}".format(e, line))
 
@@ -26,11 +24,10 @@ def preprocess_tweet(input_file, output_file, ignored_file):
 	for line in input_file:
 		date, txt = line.split('\t')
 		try:
-			txt = Preprocessor.preprocess(txt)
-			positive_value, negative_value = scorer.score(txt)
-			output_file.write("{}\t{}\t{}\n".format(date, positive_value, negative_value))
+			value = scorer.score(txt)
+			output_file.write("{}\t{}\n".format(date, value))
 		except Exception as e:
-			ignored_file.write("{}\t{}\n".format(e, line))
+			ignored_file.write("{}\t{}".format(e, line))
 
 def preprocess_file(file):
 	input_file = io.open(PATH_UNPROCESSED_FOLDER + '/' + file, 'r', encoding='utf-8')
