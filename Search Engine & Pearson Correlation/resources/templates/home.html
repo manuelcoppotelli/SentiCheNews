@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron">
+	<h1>The LegendAris</h1>
+	<p class="lead">Give me a query and I will give you an answer!</p>
+	<form>
+		<div class="form-group">
+			<input
+				type="text"
+				class="form-control"
+				name="query"
+				placeholder="Hey there, some news?"
+				autofocus
+			>
+		</div>
+		<button
+			type="submit"
+			class="btn btn-primary"
+			onclick="document.getElementById('vegetarian').value = 'false'"
+		>
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			Search All
+		</button>
+	</form>
+</div>
+{% endblock %}
