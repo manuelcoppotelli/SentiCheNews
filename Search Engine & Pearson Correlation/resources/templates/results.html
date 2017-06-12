@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				Results for: {{ query }}
+				<span class="badge">{{ num }}</span>
+			</h3>
+		</div>
+
+		<ul class="list-group">
+			{% for doc in docs -%}
+				<li class="list-group-item">
+					<a>
+							{{ doc }}
+					</a>
+				</li>
+			{%- endfor %}
+		</ul>
+	</div>
+{% endblock %}

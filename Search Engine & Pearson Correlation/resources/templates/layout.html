@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="The LegendAris search engine">
+		<meta name="author" content="Manuel Coppotelli, Simone Santacroce, George Adrian Munteanu">
+
+		{% if query is defined %}
+			<title>{{ query }} - The LegendAris</title>
+		{% else %}
+			<title>The LegendAris</title>
+		{% endif %}
+
+		<!-- Bootstrap core CSS -->
+		<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	</head>
+	<body>
+		{% if query is defined %}
+			{% include 'nav.html' %}
+		{% endif %}
+
+		<div class="container">
+			{% block content %}{% endblock %}
+			{% include 'footer.html' %}
+		</div> <!-- /container -->
+	</body>
+</html>
