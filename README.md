@@ -15,7 +15,7 @@ Project made with ❤ by:
 - [Manuel Coppotelli](https://it.linkedin.com/in/manuelcoppotelli)
 - [George Adrian Munteanu](https://it.linkedin.com/in/george-adrian-munteanu-707744134)
 
-You can find the related presentation on [Slideshare](https://www.slideshare.net/ManuelCoppotelli/sentichenews-sentiment-analysis-on-newspapers-and-tweets).
+You can find the related presentation on [Slideshare](https://www.slideshare.net/GeorgeAdrianMunteanu/sentiment-analysis-76862564).
 
 You can find the related tutorial on [YouTube](https://www.youtube.com/watch?v=W7kKXKE2EL8).
 
@@ -33,29 +33,8 @@ cp config.py.example config.py
 
 Edit the `config.py` file by adding you [Twitter API key](https://apps.twitter.com/); if you want you can also customize the other parameters.
 
-### Dev dependencies
-
-In order to modify the web-app interface, it is necessary to install the proper javascript modules and re-compile the sources:
-
-```sh
-npm install
-npm run prod
-```
-
 
 ## Running
-
-
-### Dashboard
-
-To launch the dashboard web application simply run the command:
-
-```sh
-python dashboard.py
-```
-
-The webapp will open in your default browser.
-
 
 ### Collection of the data
 
@@ -69,3 +48,27 @@ In order to properly collect the data, we suggest to set the following contab en
 
 In alternative execute manually the scripts.
 A time interval of 6 hours is recommended.
+
+### Search Engine & Pearson Correlation
+
+To run the Search Engine or the Pearson Correlation scripts, first setup the environment with the command:
+
+```sh
+python setup.py
+```
+The script ```setup.py```will create the inverted index from the tweets file (previously collected).
+
+Now, you can run the Search Engine to manually find similar tweets to a given query: 
+
+```sh
+python SearchEngine.py
+```
+
+The web interface will open in your default browser.
+
+Instead, if want to use the Pearson Correlation script, use the following command:
+
+```sh
+python PearsonCorrelation.py
+```
+
