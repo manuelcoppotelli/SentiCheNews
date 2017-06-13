@@ -31,8 +31,6 @@ def process_tweets():
 
 			words = line.split('\t')
 
-			recipe = [ words[0] ]
-
 			f.write('\t'.join(words[1:]))
 
 			lookup.append( line )
